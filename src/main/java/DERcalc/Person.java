@@ -1,5 +1,7 @@
 package DERcalc;
 
+import java.util.logging.Logger;
+
 public class Person {
     private boolean sex; //false=male true=female
     private int age;
@@ -8,7 +10,7 @@ public class Person {
     private double IMC;
     private double DERkcal=0;
     private double DERMJ=0;
-
+    static Logger logger = Logger.getLogger("Person.class");
 
     public Person(boolean sex, int age, double weight, double size) {
         this.sex = sex;
@@ -27,21 +29,21 @@ public class Person {
     void calcDERMJ() {
 
         if(sex){
-            System.out.println("femme");
+            logger.info("femme");
             if(age >= 60){
-                System.out.println("+60ans");
+                logger.info("+60ans");
                 this.DERMJ = 0.0356*weight + 1.76*size + 0.0448;
             }
             else if(age <60 && age >50){
-                System.out.println("entre 50 et 60");
+                logger.info("entre 50 et 60");
                 this.DERMJ = 0.0342*weight + 2.10*size - 0.0486;
             }
             else this.DERMJ = 0;
         }
         if(!sex){
-            System.out.println("homme");
+            logger.info("homme");
             if(age >= 60){
-                System.out.println("+60ans");
+                logger.info("+60ans");
                 this.DERMJ = 0.0478*weight + 2.26*size - 1.07;
             }
             else this.DERMJ = 0;
