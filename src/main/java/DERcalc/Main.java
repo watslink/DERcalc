@@ -12,8 +12,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("dercalc.fxml"));
-        primaryStage.setTitle("NutriCalc");
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/dercalc.fxml"));
+        primaryStage.setTitle("DERcalc");
         primaryStage.setScene(new Scene(root, 500, 275));
         primaryStage.show();
     }
