@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" prefHeight="256.0" prefWidth="449.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DERcalc.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="256.0" prefWidth="449.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sd.project.DERcalc.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -23,47 +23,51 @@
       <Pane prefHeight="245.0" prefWidth="430.0" style="-fx-background-color: aliceblue;">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4ffff9" height="224.0" layoutX="229.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="187.0" />
+
             <Label layoutX="30.0" layoutY="35.0" prefHeight="20.0" prefWidth="80.0" text="Sexe:">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="84.0" prefHeight="20.0" prefWidth="70.0" text="Age:">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="30.0" layoutY="129.0" prefHeight="20.0" prefWidth="80.0" text="Poids (kg):">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="30.0" layoutY="167.0" prefHeight="20.0" prefWidth="80.0" text="Taille (m):">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="ageControl" layoutX="124.0" layoutY="82.0" prefHeight="25.0" prefWidth="61.0" />
-            <TextField fx:id="weightControl" layoutX="124.0" layoutY="125.0" prefHeight="25.0" prefWidth="61.0" />
-            <TextField fx:id="sizeControl" layoutX="124.0" layoutY="165.0" prefHeight="25.0" prefWidth="61.0" />
             <RadioButton fx:id="sexControl0" layoutX="118.0" layoutY="27.0" mnemonicParsing="false" selected="true" text="Homme">
                <toggleGroup>
                   <ToggleGroup fx:id="sexControl" />
                </toggleGroup>
             </RadioButton>
             <RadioButton fx:id="sexControl1" layoutX="118.0" layoutY="48.0" mnemonicParsing="false" text="Femme" toggleGroup="$sexControl" />
+
+            <Label layoutX="33.0" layoutY="84.0" prefHeight="20.0" prefWidth="70.0" text="Age:">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ageControl" layoutX="124.0" layoutY="82.0" prefHeight="25.0" prefWidth="61.0" />
+
+            <Label layoutX="30.0" layoutY="129.0" prefHeight="20.0" prefWidth="80.0" text="Poids (kg):">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="weightControl" layoutX="124.0" layoutY="125.0" prefHeight="25.0" prefWidth="61.0" />
+
+            <Label layoutX="30.0" layoutY="167.0" prefHeight="20.0" prefWidth="80.0" text="Taille (m):">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sizeControl" layoutX="124.0" layoutY="165.0" prefHeight="25.0" prefWidth="61.0" />
+
             <Button layoutX="62.0" layoutY="207.0" mnemonicParsing="false" onMouseReleased="#calc" prefHeight="27.0" prefWidth="97.0" style="-fx-background-color: #4ff999; -fx-border-color: black; -fx-border-radius: 5;" text="Calcul" />
+
+
+
+            <Label layoutX="266.0" layoutY="31.0" text="Résultats">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Label>
+
             <Label layoutX="246.0" layoutY="89.0" prefHeight="20.0" prefWidth="87.0" text="IMC:">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="246.0" layoutY="126.0" prefHeight="20.0" prefWidth="87.0" text="DER (MJ):">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="246.0" layoutY="166.0" prefHeight="20.0" prefWidth="80.0" text="DER (kcal):">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
@@ -73,9 +77,21 @@
                   <Font name="Calibri Bold Italic" size="14.0" />
                </font>
             </Label>
+
+            <Label layoutX="246.0" layoutY="126.0" prefHeight="20.0" prefWidth="87.0" text="DER (MJ):">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
             <Label fx:id="DERMJ" layoutX="338.0" layoutY="126.0" prefHeight="20.0" prefWidth="60.0" text="0">
                <font>
                   <Font name="Calibri Bold Italic" size="14.0" />
+               </font>
+            </Label>
+
+            <Label layoutX="246.0" layoutY="166.0" prefHeight="20.0" prefWidth="80.0" text="DER (kcal):">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
             <Label fx:id="DERkcal" layoutX="338.0" layoutY="166.0" prefHeight="20.0" prefWidth="80.0" text="0">
@@ -83,11 +99,7 @@
                   <Font name="Calibri Bold Italic" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="266.0" layoutY="31.0" text="Résultats">
-               <font>
-                  <Font name="Calibri Bold" size="30.0" />
-               </font>
-            </Label>
+
          </children>
       </Pane>
    </children>

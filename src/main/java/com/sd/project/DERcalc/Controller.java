@@ -1,4 +1,4 @@
-package DERcalc;
+package com.sd.project.DERcalc;
 
 
 import javafx.fxml.FXML;

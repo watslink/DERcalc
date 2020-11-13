@@ -1,4 +1,4 @@
-package DERcalc;
+package com.sd.project.DERcalc;
 
 import org.junit.Test;
 
