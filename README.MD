@@ -2,7 +2,7 @@
 **********DERcalc**********
 
 
-Application JAVE 8/Maven
+Application JAVA 8/Javafx/Maven
 Tests Junit4
 
 
